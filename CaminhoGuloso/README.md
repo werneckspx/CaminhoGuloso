@@ -18,12 +18,10 @@
 
 # Logica
 
-<p align="justify">
     Para a criacao da matriz foi utilizado um vector de vector inteiro.
   ```c++
     vector<vector<int>> mat;
   ```
-</p>
 
 
 # Compilação e Execução
