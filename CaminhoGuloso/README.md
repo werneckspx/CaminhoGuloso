@@ -15,7 +15,7 @@
   - Caminhar na diagonal direita e esquerda para baixo. <br>
   Atraves dessas regras, o objetivo do programa apresentado e chegar na posicao NxN passando pelos maiores valores.
 </p>
-  <img src="imgs/exemploMat.png" /><br/>
+  <img  align="center" src="imgs/exemploMat.png" /><br/>
 
 # Logica
 
