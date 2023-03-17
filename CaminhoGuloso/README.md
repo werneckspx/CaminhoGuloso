@@ -18,11 +18,103 @@
 
 # Logica
 
-    Para a criacao da matriz foi utilizado um vector de vector inteiro.
+A funcao princial ```ReadMat()``` e chamada no main, nesta funcao ocorrem todos os processos do programa, partindo da leitura do arquivo ```dataset/input.data``` ate a relizacao do processo de caminhamento guloso na matriz. <br>
+
+Para a criacao da matriz foi utilizado um vector de vector inteiro.
+  
   ```c++
     vector<vector<int>> mat;
   ```
 
+Durante o processo de leitura do arquivo, ocorria o processo de tokenizacao das informacoes, e a passagem de string para int, passagem necessaria para a realizacao das acoes futuras do algoritmo. Estes processos que sao realizados caso o else do codigo abaixo seja requisitado, nele estao as funcoes: <br>```Verificando``` que recebe como parametro a matriz, a posicao inicial da linha e coluna, o tamanho da matriz e o endereco da variavel soma total.<br> ```Imprimindo``` que recebe como parametro a matriz.
+
+```c++
+while (!input_file.eof())
+    {
+        while (getline(input_file, line,'\n')){
+            istringstream ln(line);
+            if (cont==0)
+            {
+                tam=atoi(line.c_str());
+                cont++;
+                continue;    
+            }else if (line.size()>1)
+            {
+                while (ln >> num) {
+                    n.push_back(atoi(num.c_str()));
+                }
+                mat.push_back(n);
+                line.clear();
+                n.clear();
+            }
+            else{
+                cout<<endl;
+                Verificando(mat,0,0,tam,&somaTotal);
+                Imprimindo(mat);
+                cout<<endl;
+                mat.clear();
+                
+            }
+        } 
+    }
+```
+A funcao ```Verificando```:
+  Partindo do pressuposto de que o caminho a ser percorrido deve ser entre os maiores valores, foi feito um vector ```vector<int> comparar``` que recebe os valores das posicoes a serem verificadas. Estes valores sao ordenados em ordem descrescente pela funcao sort ```sort(comparar.begin(), comparar.end(), greater<>())```, atraves dessa ordenacao, o maior valor entre os possiveis e colocado na primeira posicao do vector, sabendo disso, uma leitura por toda matriz e realizada, nesta leitura busca-se o valor que esta na primeira posicao do vector, porem e valido ressaltar que pode ser que existam dois valores iguais e isso causaria um problema na logica, por isso uma condicao de que, caso a linha da atual posicao seja menor que a linha da leitura da matriz, o algoritmo torna possivel o recebimento da posicao. Ao receber a posicao linha e coluna, o algoritmo soma 1 a uma varival auxiliar, esta que e desenvolvida para interromper o loop de leitura da matriz.
+  ```c++
+            aux=0;
+            comparar.push_back(mat[linha+1][coluna+1]);
+            comparar.push_back(mat[linha+1][coluna-1]);
+            comparar.push_back(mat[linha+1][coluna]);
+            comparar.push_back(mat[linha][coluna+1]);
+            comparar.push_back(mat[linha][coluna-1]);
+            sort(comparar.begin(), comparar.end(), greater<>());
+
+            for (int i = 0; i < tam; i++)
+            {
+                for (int j = 0; j < tam; j++)
+                {
+                    if (comparar[0]==mat[i][j])
+                    {
+                        if (linha<=i)
+                        {
+                            linha=i;
+                            coluna=j;
+                            aux++;
+                            cout<<i<<" "<<j<<" Valor: "<<mat[i][j]<<"."<<endl;
+                            soma=soma+mat[i][j];
+                            mat[i][j]=0;
+                            break;
+                        }
+                    }
+                }
+                if (aux>0)
+                {
+                    break;
+                }
+            }
+            comparar.clear();
+  ```
+
+ Todo este processo e feito enquanto a posicao linha coluna nao sao iguais a posicao NxN da matriz passada. <br>
+ Em casos particulares, como:<br>
+ 1-Linha atual igual ultima linha da matriz. <br>
+ 2-Coluna atual igual primeira coluna da matriz. <br>
+ 3- Coluna atual igual ultima coluna da matriz. <br>
+ Foram realizadas acoes permitidas somente para a posicao que se ocupava, para que o algoritmo nao acessasse posicoes indesejadas. <br>
+
+  Este processo acontece enquanto a arquivo nao termina sua leitura, ou seja, para cada matriz no arquivo lido, e chamado uma vez a funcao verificando e a funcao imprimindo.
+
+ # Biblitecas 
+<p>Para o funcionamento do programa, é necessário incluir as seguintes bibliotecas: 
+<ul>
+    <li><code>#include 'iostream'</code></li>
+    <li><code>#include 'fstream'</code></li>
+    <li><code>#include 'vector'</code></li>
+    <li><code>#include 'string'</code></li>
+    <li><code>#include 'stream'</code></li>
+    <li><code>#include 'iterator'</code></li>
+    <li><code>#include 'algorithm'</code></li>
+</ul>
 
 # Compilação e Execução
 
