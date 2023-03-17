@@ -97,8 +97,8 @@ A funcao  Verificando  parte do pressuposto de que o caminho a ser percorrido de
  Todo este processo e feito enquanto a posicao linha coluna nao sao iguais a posicao NxN da matriz passada. <br>
  Em casos particulares, como:<br>
 > **Linha atual igual ultima linha da matriz.: **
- 2-Coluna atual igual primeira coluna da matriz. <br>
- 3- Coluna atual igual ultima coluna da matriz. <br>
+> **2-Coluna atual igual primeira coluna da matriz. **
+> ** 3- Coluna atual igual ultima coluna da matriz. **
  Foram realizadas acoes permitidas somente para a posicao que se ocupava, para que o algoritmo nao acessasse posicoes indesejadas. <br>
 
   Este processo acontece enquanto a arquivo nao termina sua leitura, ou seja, para cada matriz no arquivo lido, e chamado uma vez a funcao verificando e a funcao imprimindo.
