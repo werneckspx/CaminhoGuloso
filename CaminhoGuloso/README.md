@@ -98,7 +98,7 @@ Sabendo disso, uma leitura por toda matriz e realizada, nesta leitura busca-se o
 
   Este processo acontece enquanto a arquivo nao termina sua leitura, ou seja, para cada matriz no arquivo lido, e chamado uma vez a funcao verificando e a funcao imprimindo.
 
- # Biblitecas 
+ # Bibliotecas 
 <p>Para o funcionamento do programa, é necessário incluir as seguintes bibliotecas: 
 <ul>
     <li><code>#include 'iostream'</code></li>
