@@ -6,20 +6,23 @@
 </a> 
 </div>
 
-# Explicação do Problema
+# Problema Proposto
 <p align="justify">
-  Utilizando o processo de caminhamento guloso, nesse projeto o objetivo e caminhar por matrizes NxN, passadas como entrada, iniciando pela posicao 0x0. O caminho passado sera o que apresentar o maior valor entre as opcoes em relacao a posicao atual:
-  - Caminhar a direita.
-  - Caminhar a esquerda.
-  - Caminhar para baixo.
-  - Caminhar na diagonal direita e esquerda para baixo.
+  Utilizando o processo de caminhamento guloso, nesse projeto o objetivo e caminhar por matrizes NxN, passadas como entrada, iniciando pela posicao 0x0. O caminho passado sera o que apresentar o maior valor entre as opcoes em relacao a posicao atual: <br>
+  - Caminhar a direita. <br>
+  - Caminhar a esquerda. <br>
+  - Caminhar para baixo. <br>
+  - Caminhar na diagonal direita e esquerda para baixo. <br>
   Atraves dessas regras, o objetivo do programa apresentado e chegar na posicao NxN passando pelos maiores valores.
 </p>
 
 # Logica
 
 <p align="justify">
-    
+    Para a criacao da matriz foi utilizado um vector de vector inteiro.
+  ```c++
+    vector<vector<int>> mat;
+  ```
 </p>
 
 
