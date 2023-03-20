@@ -16,6 +16,7 @@
   Atraves dessas regras, o objetivo do programa apresentado e chegar na posicao NxN passando pelos maiores valores.
 </p>
 <img src="imgs/exemploMat.png" />
+Fig 1. Exemplo de funcionamento do Problema.<br>
 
 # Logica
 
@@ -93,10 +94,13 @@ Sabendo disso, uma leitura por toda matriz e realizada, nesta leitura busca-se o
  Em casos particulares, como:<br>
  1-Linha atual igual ultima linha da matriz.: <br>
  <img src="imgs/exemploMatEx1.png" /> <br>
+ Fig 2. Exemplo de possibilidades em caso de situacao especifica. <br> 
  2-Coluna atual igual primeira coluna da matriz. <br>
-  <img src="imgs/exemploMatEx2.png" /> <br>
+  <img src="imgs/exemploMatEx2.png" /> <br>\
+  Fig 3. Exemplo de possibilidades em caso de situacao especifica. <br> 
  3- Coluna atual igual ultima coluna da matriz. <br>
   <img src="imgs/exemploMatEx3.png" /> <br>
+   Fig 4. Exemplo de possibilidades em caso de situacao especifica. <br> 
  Foram realizadas acoes permitidas somente para a posicao que se ocupava, para que o algoritmo nao acessasse posicoes indesejadas. <br>
 
   Este processo acontece enquanto a arquivo nao termina sua leitura, ou seja, para cada matriz no arquivo lido, e chamado uma vez a funcao verificando e a funcao imprimindo.
