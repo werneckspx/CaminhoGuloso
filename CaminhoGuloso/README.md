@@ -51,6 +51,7 @@ Fig 1. Exemplo de funcionamento do Problema.<br>
  # Resultados 
    Considerando os pontos realizados acima, os resultados esperados durante a leitura do arquivo com 4 matrizes 7x7:<br><br>
    <img width="300px" src="imgs/teste1.jpeg" /> <br>
+   Todas as matrizes apresentaram o mesmo padrao de resultado, ao finalizar o precosso de leitura ira retornar a soma de todas as somas. <br>
    
  # Bibliotecas 
 <p>Para o funcionamento do programa, é necessário incluir as seguintes bibliotecas: 
