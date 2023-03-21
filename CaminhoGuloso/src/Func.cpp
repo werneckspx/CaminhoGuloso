@@ -56,9 +56,9 @@ void ReadMat(){
 
 void Imprimindo(vector<vector<int>>mat){
     
-    for (int i = 0; i < mat.size(); i++)
+    for (int i = 0; i < (int)mat.size(); i++)
     {
-        for (int j = 0; j < mat[i].size(); j++)
+        for (int j = 0; j < (int)mat[i].size(); j++)
         {
             cout<<mat[i][j]<<" ";
         }
