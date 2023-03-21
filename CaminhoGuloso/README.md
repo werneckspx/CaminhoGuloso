@@ -49,7 +49,7 @@ Fig 1. Exemplo de funcionamento do Problema.<br>
   Este processo acontece enquanto a arquivo nao termina sua leitura, ou seja, para cada matriz no arquivo lido, e chamado uma vez a funcao verificando e a funcao imprimindo.
 
  # Resultados 
-    Considerando os pontos realizados acima, os resultados esperados:
+   Considerando os pontos realizados acima, os resultados esperados:
 
  # Bibliotecas 
 <p>Para o funcionamento do programa, é necessário incluir as seguintes bibliotecas: 
