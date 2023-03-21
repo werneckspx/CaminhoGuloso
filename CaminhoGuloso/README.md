@@ -15,8 +15,6 @@
   - Caminhar na diagonal direita e esquerda para baixo. <br>
   Atraves dessas regras, o objetivo do programa apresentado e chegar na posicao NxN passando pelos maiores valores.
 </p>
-<img width="300px" src="imgs/exemploMat.png" />
-Fig 1. Exemplo de funcionamento do Problema.<br>
 
 # Logica
 
@@ -28,67 +26,12 @@ Para a criacao da matriz foi utilizado um vector de vector inteiro.
     vector<vector<int>> mat;
   ```
 
-Durante o processo de leitura do arquivo, ocorria o processo de tokenizacao das informacoes, e a passagem de string para int, passagem necessaria para a realizacao das acoes futuras do algoritmo. Estes processos que sao realizados caso o else do codigo abaixo seja requisitado, nele estao as funcoes: <br>```Verificando``` que recebe como parametro a matriz, a posicao inicial da linha e coluna, o tamanho da matriz e o endereco da variavel soma total.<br> ```Imprimindo``` que recebe como parametro a matriz.
+Durante o processo de leitura do arquivo,que se encontra no arquivo ```Func.cpp``` que se esta na pasta ```src``` entre as linhas 21 a 52, ocorre o processo de tokenizacao das informacoes, e a passagem de string para int, passagem necessaria para a realizacao das acoes futuras do algoritmo. Estes processos que sao realizados caso o else do codigo nas linhas 43 a 50, nele estao as funcoes: <br>```Verificando``` que recebe como parametro a matriz, a posicao inicial da linha e coluna, o tamanho da matriz e o endereco da variavel soma total.<br> ```Imprimindo``` que recebe como parametro a matriz.<br> <br>
 
-```c++
-while (!input_file.eof())
-    {
-        while (getline(input_file, line,'\n')){
-            istringstream ln(line);
-            if (cont==0)
-            {
-                tam=atoi(line.c_str());
-                cont++;
-                continue;    
-            }else if (line.size()>1)
-            {
-                while (ln >> num) {
-                    n.push_back(atoi(num.c_str()));
-                }
-                mat.push_back(n);
-                line.clear();
-                n.clear();
-            }
-            else{
-                cout<<endl;
-                Verificando(mat,0,0,tam,&somaTotal);
-                Imprimindo(mat);
-                cout<<endl;
-                mat.clear();
-                
-            }
-        } 
-    }
-```
-A funcao  Verificando  parte do pressuposto de que o caminho a ser percorrido deve ser entre os maiores valores, entre as opcoes, que estao na matriz. Para isso foi feito um vector ```vector<int> comparar``` que recebe os valores das posicoes a serem verificadas. Estes valores sao ordenados em ordem descrescente pela funcao sort ```sort(comparar.begin(), comparar.end(), greater<>())```, atraves dessa ordenacao, o maior valor entre os possiveis e colocado na primeira posicao do vector.<br>
-Sabendo disso, uma leitura por toda matriz e realizada, nesta leitura busca-se o valor que esta na primeira posicao do vector, porem e valido ressaltar que pode ser que existam dois valores iguais e isso causaria um problema na logica, por isso uma condicao de que, caso a linha da atual posicao seja menor que a linha da leitura da matriz, o algoritmo torna possivel o recebimento da posicao. Ao achar o valor recebe a posicao linha e coluna, a posicao anterior recebe 0 para que seja marcado uma posicao ja verificada e o algoritmo soma 1 a uma varival auxiliar, esta que foi criada para interromper o loop de leitura da matriz.
-  ```c++
-            aux=0;
-            for (int i = 0; i < tam; i++)
-            {
-                for (int j = 0; j < tam; j++)
-                {
-                    if (comparar[0]==mat[i][j])
-                    {
-                        if (linha<=i)
-                        {
-                            linha=i;
-                            coluna=j;
-                            aux++;
-                            cout<<i<<" "<<j<<" Valor: "<<mat[i][j]<<"."<<endl;
-                            soma=soma+mat[i][j];
-                            mat[i][j]=0;
-                            break;
-                        }
-                    }
-                }
-                if (aux>0)
-                {
-                    break;
-                }
-            }
-            comparar.clear();
-  ```
+A funcao  Verificando  parte do pressuposto de que o caminho a ser percorrido deve ser entre os maiores valores, entre as opcoes, que estao na matriz. Para isso foi feito um vector ```vector<int> comparar``` que recebe os valores das posicoes a serem verificadas. Estes valores sao ordenados em ordem descrescente pela funcao sort ```sort(comparar.begin(), comparar.end(), greater<>())```, atraves dessa ordenacao, o maior valor entre os possiveis e colocado na primeira posicao do vector.<br><br>
+Sabendo disso, uma leitura por toda matriz e realizada, nesta leitura busca-se o valor que esta na primeira posicao do vector, porem e valido ressaltar que pode ser que existam dois valores iguais e isso causaria um problema na logica, por isso uma condicao de que, caso a linha da atual posicao seja menor que a linha da leitura da matriz, o algoritmo torna possivel o recebimento da posicao. Ao achar o valor recebe a posicao linha e coluna, a posicao anterior recebe 0 para que seja marcado uma posicao ja verificada e o algoritmo soma 1 a uma varival auxiliar, esta que foi criada para interromper o loop de leitura da matriz. Apos interromper a iteracao da repeticao esta finalizada a leitura da primeira matriz do arquivo, tornado possivel a iniciacao da leitura da proxima matriz do arquivo.<br><br>
+<img width="300px" src="imgs/exemploMat.png" />
+Fig 1. Exemplo de funcionamento do Problema.<br>
 
  Todo este processo e feito enquanto a posicao linha coluna nao sao iguais a posicao NxN da matriz passada. <br>
  Em casos particulares, como:<br>
@@ -104,6 +47,9 @@ Sabendo disso, uma leitura por toda matriz e realizada, nesta leitura busca-se o
  Foram realizadas acoes permitidas somente para a posicao que se ocupava, para que o algoritmo nao acessasse posicoes indesejadas. <br>
 
   Este processo acontece enquanto a arquivo nao termina sua leitura, ou seja, para cada matriz no arquivo lido, e chamado uma vez a funcao verificando e a funcao imprimindo.
+
+ # Resultados 
+    Considerando os pontos realizados acima, os resultados esperados:
 
  # Bibliotecas 
 <p>Para o funcionamento do programa, é necessário incluir as seguintes bibliotecas: 
