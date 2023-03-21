@@ -29,8 +29,8 @@ Para a criacao da matriz foi utilizado um vector de vector inteiro.
 Durante o processo de leitura do arquivo,que se encontra no arquivo ```Func.cpp``` que se esta na pasta ```src``` entre as linhas 21 a 52, ocorre o processo de tokenizacao das informacoes, e a passagem de string para int, passagem necessaria para a realizacao das acoes futuras do algoritmo. Estes processos que sao realizados caso o else do codigo nas linhas 43 a 50, nele estao as funcoes: <br>```Verificando``` que recebe como parametro a matriz, a posicao inicial da linha e coluna, o tamanho da matriz e o endereco da variavel soma total.<br> ```Imprimindo``` que recebe como parametro a matriz.<br> <br>
 
 A funcao  Verificando  parte do pressuposto de que o caminho a ser percorrido deve ser entre os maiores valores, entre as opcoes, que estao na matriz. Para isso foi feito um vector ```vector<int> comparar``` que recebe os valores das posicoes a serem verificadas. Estes valores sao ordenados em ordem descrescente pela funcao sort ```sort(comparar.begin(), comparar.end(), greater<>())```, atraves dessa ordenacao, o maior valor entre os possiveis e colocado na primeira posicao do vector.<br><br>
-Sabendo disso, uma leitura por toda matriz e realizada, nesta leitura busca-se o valor que esta na primeira posicao do vector, porem e valido ressaltar que pode ser que existam dois valores iguais e isso causaria um problema na logica, por isso uma condicao de que, caso a linha da atual posicao seja menor que a linha da leitura da matriz, o algoritmo torna possivel o recebimento da posicao. Ao achar o valor recebe a posicao linha e coluna, a posicao anterior recebe 0 para que seja marcado uma posicao ja verificada e o algoritmo soma 1 a uma varival auxiliar, esta que foi criada para interromper o loop de leitura da matriz. Apos interromper a iteracao da repeticao esta finalizada a leitura da primeira matriz do arquivo, tornado possivel a iniciacao da leitura da proxima matriz do arquivo.<br><br>
-<img width="300px" src="imgs/exemploMat.png" />
+Sabendo disso, uma leitura por toda matriz e realizada, nesta leitura busca-se o valor que esta na primeira posicao do vector, porem e valido ressaltar que pode ser que existam dois valores iguais e isso causaria um problema na logica, por isso uma condicao de que, caso a linha da atual posicao seja menor que a linha da leitura da matriz, o algoritmo torna possivel o recebimento da posicao. Ao achar o valor recebe a posicao linha e coluna, a posicao anterior recebe 0 para que seja marcado uma posicao ja verificada e o algoritmo soma 1 a uma varival auxiliar, esta que foi criada para interromper o loop de leitura da matriz, e retorna a soma dos valores das posicoes que foram passadas para realizar o encaminhamento ate a posicao NxN. Apos interromper a iteracao da repeticao esta finalizada a leitura da primeira matriz do arquivo, tornado possivel a iniciacao da leitura da proxima matriz do arquivo.<br><br>
+<img width="300px" src="imgs/teste1.jpeg" />
 Fig 1. Exemplo de funcionamento do Problema.<br>
 
  Todo este processo e feito enquanto a posicao linha coluna nao sao iguais a posicao NxN da matriz passada. <br>
@@ -49,7 +49,8 @@ Fig 1. Exemplo de funcionamento do Problema.<br>
   Este processo acontece enquanto a arquivo nao termina sua leitura, ou seja, para cada matriz no arquivo lido, e chamado uma vez a funcao verificando e a funcao imprimindo.
 
  # Resultados 
-   Considerando os pontos realizados acima, os resultados esperados:
+   Considerando os pontos realizados acima, os resultados esperados durante a leitura do arquivo com 4 matrizes 4x4:<br><br>
+   <img width="300px" src="imgs/exemploMatEx3.png" /> <br>
 
  # Bibliotecas 
 <p>Para o funcionamento do programa, é necessário incluir as seguintes bibliotecas: 
