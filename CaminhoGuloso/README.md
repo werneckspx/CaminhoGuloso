@@ -30,7 +30,7 @@ Durante o processo de leitura do arquivo,que se encontra no arquivo ```Func.cpp`
 
 A funcao  Verificando  parte do pressuposto de que o caminho a ser percorrido deve ser entre os maiores valores, entre as opcoes, que estao na matriz. Para isso foi feito um vector ```vector<int> comparar``` que recebe os valores das posicoes a serem verificadas. Estes valores sao ordenados em ordem descrescente pela funcao sort ```sort(comparar.begin(), comparar.end(), greater<>())```, atraves dessa ordenacao, o maior valor entre os possiveis e colocado na primeira posicao do vector.<br><br>
 Sabendo disso, uma leitura por toda matriz e realizada, nesta leitura busca-se o valor que esta na primeira posicao do vector, porem e valido ressaltar que pode ser que existam dois valores iguais e isso causaria um problema na logica, por isso uma condicao de que, caso a linha da atual posicao seja menor que a linha da leitura da matriz, o algoritmo torna possivel o recebimento da posicao. Ao achar o valor recebe a posicao linha e coluna, a posicao anterior recebe 0 para que seja marcado uma posicao ja verificada e o algoritmo soma 1 a uma varival auxiliar, esta que foi criada para interromper o loop de leitura da matriz, e retorna a soma dos valores das posicoes que foram passadas para realizar o encaminhamento ate a posicao NxN. Apos interromper a iteracao da repeticao esta finalizada a leitura da primeira matriz do arquivo, tornado possivel a iniciacao da leitura da proxima matriz do arquivo.<br><br>
-<img width="300px" src="imgs/teste1.jpeg" />
+<img width="300px" src="imgs/exemploMat.jpeg" />
 Fig 1. Exemplo de funcionamento do Problema.<br>
 
  Todo este processo e feito enquanto a posicao linha coluna nao sao iguais a posicao NxN da matriz passada. <br>
