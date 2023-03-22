@@ -52,8 +52,8 @@ Então, por meio de um if após o loop de leitura, no caso onde o input do progr
  # Resultados 
    Considerando a lógica e a descrição do problema acima, os resultados esperados durante a leitura do arquivo com 4 matrizes 7x7:<br><br>
    <div align="center"><img width="300px" src="imgs/teste1.jpeg" /> <br></div>
- > OBS: O resultado apresentado é de apenas uma matriz 7x7.
-   Todas as matrizes apresentaram o mesmo padrão de resultado, ao finalizar o processo de leitura, irá retornar a soma de todas as somas. <br>
+   
+> OBS: O resultado apresentado é de apenas uma matriz 7x7.Todas as matrizes apresentaram o mesmo padrão de resultado, ao finalizar o processo de leitura, irá retornar a soma de todas as somas. <br>
    
  # Bibliotecas 
 <p>Para o funcionamento do programa, é necessário incluir as seguintes bibliotecas: 
