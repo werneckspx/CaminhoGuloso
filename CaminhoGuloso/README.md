@@ -8,50 +8,52 @@
 
 # Problema Proposto
 <p align="justify">
-  Utilizando o processo de caminhamento guloso, nesse projeto o objetivo e caminhar por matrizes NxN, passadas como entrada, iniciando pela posicao 0x0. O caminho passado sera o que apresentar o maior valor entre as opcoes em relacao a posicao atual: <br>
-  - Caminhar a direita. <br>
-  - Caminhar a esquerda. <br>
+  Utilizando o processo de caminhamento guloso, nesse projeto o objetivo é caminhar por matrizes NxN, passadas como entrada, iniciando pela posição 0x0. O caminho passado será o que apresentar o maior valor entre as opções em relação a posição atual: <br>
+  - Caminhar à direita. <br>
+  - Caminhar à esquerda. <br>
   - Caminhar para baixo. <br>
   - Caminhar na diagonal direita e esquerda para baixo. <br>
-  Atraves dessas regras, o objetivo do programa apresentado e chegar na posicao NxN passando pelos maiores valores.
+  Através dessas regras, o objetivo do programa apresentado e chegar na posição NxN passando pelos maiores valores.
 </p>
 
-# Logica
+# Lógica
 
-A funcao princial ```ReadMat()``` e chamada no main, nesta funcao ocorrem todos os processos do programa, partindo da leitura do arquivo ```dataset/input.data``` ate a relizacao do processo de caminhamento guloso na matriz. <br>
+A função principal ```ReadMat()``` é chamada no main, nesta função ocorrem todos os processos do programa, partindo da leitura do arquivo ```dataset/input.data``` até a relização do processo de caminhamento guloso na matriz. <br>
 
-Para a criacao da matriz foi utilizado um vector de vector inteiro.
+Para a criação da matriz foi utilizado um vector de vector de inteiro.
   
   ```c++
     vector<vector<int>> mat;
   ```
 
-Durante o processo de leitura do arquivo,que se encontra no arquivo ```Func.cpp``` que se esta na pasta ```src``` entre as linhas 21 a 52, ocorre o processo de tokenizacao das informacoes, e a passagem de string para int, passagem necessaria para a realizacao das acoes futuras do algoritmo. Estes processos que sao realizados caso o else do codigo nas linhas 43 a 50, nele estao as funcoes: <br>```Verificando``` que recebe como parametro a matriz, a posicao inicial da linha e coluna, o tamanho da matriz e o endereco da variavel soma total.<br> ```Imprimindo``` que recebe como parametro a matriz.<br> <br>
+Durante o processo de leitura do arquivo,que se encontra no arquivo ```Func.cpp``` que se está na pasta ```src``` entre as linhas 21 a 52, ocorre o processo de tokenização das informações, e a passagem de string para int, conversão que é necessária para a realização das ações futuras do algoritmo. Estes processos são realizados caso o else do código nas linhas 43 a 50 caso ele seja requerido, nele estão as funções: <br>```Verificando``` que recebe como parâmetro a matriz, a posição inicial da linha e coluna, o tamanho da matriz e o endereço da variável soma total.<br> ```Imprimindo``` que recebe como parâmetro a matriz.<br> <br>
 
-A funcao  Verificando  parte do pressuposto de que o caminho a ser percorrido deve ser entre os maiores valores, entre as opcoes, que estao na matriz. Para isso foi feito um vector ```vector<int> comparar``` que recebe os valores das posicoes a serem verificadas. Estes valores sao ordenados em ordem descrescente pela funcao sort ```sort(comparar.begin(), comparar.end(), greater<>())```, atraves dessa ordenacao, o maior valor entre os possiveis e colocado na primeira posicao do vector.<br><br>
-Sabendo disso, uma leitura por toda matriz e realizada, nesta leitura busca-se o valor que esta na primeira posicao do vector, porem e valido ressaltar que pode ser que existam dois valores iguais e isso causaria um problema na logica, por isso uma condicao de que, caso a linha da atual posicao seja menor que a linha da leitura da matriz, o algoritmo torna possivel o recebimento da posicao. Ao achar o valor recebe a posicao linha e coluna, a posicao anterior recebe 0 para que seja marcado uma posicao ja verificada e o algoritmo soma 1 a uma varival auxiliar, esta que foi criada para interromper o loop de leitura da matriz, e retorna a soma dos valores das posicoes que foram passadas para realizar o encaminhamento ate a posicao NxN. Apos interromper a iteracao da repeticao esta finalizada a leitura da primeira matriz do arquivo, tornado possivel a iniciacao da leitura da proxima matriz do arquivo.<br><br>
-<img width="300px" src="imgs/exemploMat.png" /><br>
+A função  Verificando  parte do pressuposto de que o caminho a ser percorrido deve ser entre os maiores valores, entre as opções, que estão na matriz. Para isso, foi feito um vector ```vector<int> comparar``` que recebe os valores das posições a serem verificadas. Estes valores são ordenados em ordem descrescente pela funcao sort ```sort(comparar.begin(), comparar.end(), greater<>())```, através dessa ordenação, o maior valor entre os possíveis e colocado na primeira posição do vector.<br><br>
+Sabendo disso, uma leitura por toda matriz é realizada, nesta leitura busca-se o valor que está na primeira posição do vector, porém é valido ressaltar que pode ser que existam dois valores iguais e isso causaria um problema na lógica, por isso uma condição de que, caso a linha da atual posição seja menor que a linha da leitura da matriz, o algoritmo torna possível o recebimento da posição. Ao achar o valor recebe a posição linha e coluna, a posição anterior recebe 0 para que seja marcado uma posição já verificada e o algoritmo soma 1 à uma variável auxiliar, que foi criada para interromper o loop de leitura da matriz, e retorna a soma dos valores das posições que foram passadas para realizar o encaminhamento até a posição NxN. Após interromper a iteração da repetição está finalizada a leitura da primeira matriz do arquivo, tornando possível a iniciação da leitura da próxima matriz do arquivo.<br><br>
+<div align="center"><img width="300px" src="imgs/exemploMat.png" /><br>
 Fig 1. Exemplo de funcionamento do Problema.<br>
+</div>
+ Todo este processo é feito enquanto a posição linha coluna não são iguais a posição NxN da matriz passada. <br>
+ Em casos particulares, foram realizadas ações permitidas somente para a posição que se ocupava, para que o algoritmo não acessasse posições indesejadas. Exemplos:<br><br>
+ 1-Linha atual igual última linha da matriz, a imagem abaixo representa a única opção possível de movimento, que é: andar à direita. <br>
+ <div align="center"><img width="300px" src="imgs/exemploMatEx1.png" /> <br>
+ Fig 2. Exemplo de possibilidades em caso de situação específica. <br> <br></div>
+ 2-Coluna atual igual primeira coluna da matriz, a imagem abaixo representa 3 opções possíveis de movimento, que são: andar à direita, diagonal direita e para baixo. <br>
+ <div align="center"> <img width="300px" src="imgs/exemploMatEx2.png" /> <br>
+  Fig 3. Exemplo de possibilidades em caso de situação específica. <br> <br></div>
+ 3- Coluna atual igual última coluna da matriz, a imagem abaixo representa 3 opções possíveis de movimento, que são: andar à esquerda, diagonal esquerda e para baixo.<br>
+ <div align="center"> <img width="300px" src="imgs/exemploMatEx3.png" /> <br>
+   Fig 4. Exemplo de possibilidades em caso de situação específica. <br> <br></div>
 
- Todo este processo e feito enquanto a posicao linha coluna nao sao iguais a posicao NxN da matriz passada. <br>
- Em casos particulares, foram realizadas acoes permitidas somente para a posicao que se ocupava, para que o algoritmo nao acessasse posicoes indesejadas. Exemplos:<br><br>
- 1-Linha atual igual ultima linha da matriz, a imagem abaixo representa a unica opcao possivel de movimento, que e: andar a direita. <br>
- <img width="300px" src="imgs/exemploMatEx1.png" /> <br>
- Fig 2. Exemplo de possibilidades em caso de situacao especifica. <br> <br>
- 2-Coluna atual igual primeira coluna da matriz, a imagem abaixo representa 3 opcoes possiveis de movimento, que sao: andar a direita, diagonal direita e para baixo <br>
-  <img width="300px" src="imgs/exemploMatEx2.png" /> <br>
-  Fig 3. Exemplo de possibilidades em caso de situacao especifica. <br> <br>
- 3- Coluna atual igual ultima coluna da matriz, a imagem abaixo representa 3 opcoes possiveis de movimento, que sao: andar a esquerda, diagonal esquerda e para baixo<br>
-  <img width="300px" src="imgs/exemploMatEx3.png" /> <br>
-   Fig 4. Exemplo de possibilidades em caso de situacao especifica. <br> <br>
-
-  Este processo acontece enquanto a arquivo nao termina sua leitura, ou seja, para cada matriz no arquivo lido, e chamado uma vez a funcao verificando e a funcao imprimindo.
+  Este processo acontece enquanto a arquivo não termina sua leitura, ou seja, para cada matriz no arquivo lido, e chamado uma vez a função verificando e a função imprimindo.<br>
+Para o caso em que o arquivo de entrada tivesse apenas um '/n' ao final, a leitura do arquivo considerava essa última linha já como o final do arquivo, o que interrompia o loop de leitura e não permitia que a última matriz fosse percorrida(não entrava no else). Para resolver este problema, foi criado um booleano `decisao` que é responsável por tomar a decisão se a última matriz salva já foi percorrida ou não. Este booleano é iniciado com false, e recebe falso toda vez que uma linha é tokenizada. O true só é atribuído à variável no else, que é onde as matrizes são percorridas.<br>
+Então, por meio de um if após o loop de leitura, no caso onde o input do programa tivesse dois '/n', a variável booleana iria impedir a matriz de ser caminhada duas vezes, e no caso de apenas um '/n', ela seria percorrida dentro do if, finalizando o percorrimento de todas as matrizes corretamente.<br>
 
  # Resultados 
-   Considerando a logica e a descricao do problema acima, os resultados esperados durante a leitura do arquivo com 4 matrizes 7x7:<br><br>
-   <img width="300px" src="imgs/teste1.jpeg" /> <br>
- > OBS: O resultado apresentado e de apenas uma matriz 7x7.
-   Todas as matrizes apresentaram o mesmo padrao de resultado, ao finalizar o precosso de leitura ira retornar a soma de todas as somas. <br>
+   Considerando a lógica e a descrição do problema acima, os resultados esperados durante a leitura do arquivo com 4 matrizes 7x7:<br><br>
+   <div align="center"><img width="300px" src="imgs/teste1.jpeg" /> <br></div>
+   
+> OBS: O resultado apresentado é de apenas uma matriz 7x7. Todas as matrizes apresentaram o mesmo padrão de resultado, ao finalizar o processo de leitura, irá retornar a soma de todas as somas. <br>
    
  # Bibliotecas 
 <p>Para o funcionamento do programa, é necessário incluir as seguintes bibliotecas: 
