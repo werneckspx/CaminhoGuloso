@@ -38,10 +38,10 @@ Fig 1. Exemplo de funcionamento do Problema.<br>
  1-Linha atual igual última linha da matriz, a imagem abaixo representa a única opção possível de movimento, que é: andar à direita. <br>
  <div align="center"><img width="300px" src="imgs/exemploMatEx1.png" /> <br>
  Fig 2. Exemplo de possibilidades em caso de situação específica. <br> <br></div>
- 2-Coluna atual igual primeira coluna da matriz, a imagem abaixo representa 3 opções possíveis de movimento, que são: andar à direita, diagonal direita e para baixo. <br>
+ 2-Coluna atual igual primeira coluna da matriz, a imagem abaixo representa 3 opções possíveis de movimento, que são: andar à direita, diagonal direita e para baixo <br>
  <div align="center"> <img width="300px" src="imgs/exemploMatEx2.png" /> <br>
   Fig 3. Exemplo de possibilidades em caso de situação específica. <br> <br></div>
- 3- Coluna atual igual última coluna da matriz, a imagem abaixo representa 3 opções possíveis de movimento, que são: andar à esquerda, diagonal esquerda e para baixo.<br>
+ 3- Coluna atual igual última coluna da matriz, a imagem abaixo representa 3 opções possíveis de movimento, que são: andar à esquerda, diagonal esquerda e para baixo<br>
  <div align="center"> <img width="300px" src="imgs/exemploMatEx3.png" /> <br>
    Fig 4. Exemplo de possibilidades em caso de situação específica. <br> <br></div>
 
@@ -52,8 +52,8 @@ Então, por meio de um if após o loop de leitura, no caso onde o input do progr
  # Resultados 
    Considerando a lógica e a descrição do problema acima, os resultados esperados durante a leitura do arquivo com 4 matrizes 7x7:<br><br>
    <div align="center"><img width="300px" src="imgs/teste1.jpeg" /> <br></div>
-   
-> OBS: O resultado apresentado é de apenas uma matriz 7x7. Todas as matrizes apresentaram o mesmo padrão de resultado, ao finalizar o processo de leitura, irá retornar a soma de todas as somas. <br>
+ > OBS: O resultado apresentado é de apenas uma matriz 7x7.
+   Todas as matrizes apresentaram o mesmo padrão de resultado, ao finalizar o processo de leitura, irá retornar a soma de todas as somas. <br>
    
  # Bibliotecas 
 <p>Para o funcionamento do programa, é necessário incluir as seguintes bibliotecas: 

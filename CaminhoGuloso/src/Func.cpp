@@ -8,6 +8,7 @@ void ReadMat(){
     string line;
     vector<int> n;
     int tam,somaTotal=0;
+    bool decisao=false;
 
     //verificando se o arq pode ser aberto.
     if (!input_file.is_open()) {
@@ -30,6 +31,7 @@ void ReadMat(){
                 continue;    
             }else if (line.size()>1)
             {
+                decisao=false;
                 //tokenizacao da string line convertendo a string num para int
                 while (ln >> num) {
                     n.push_back(atoi(num.c_str()));
@@ -41,15 +43,21 @@ void ReadMat(){
                 n.clear();
             }//else para o desenvolvimento do programa chamando as funcoes de caminha para a matriz, clear no mat no final
             else{
+                decisao=true;
                 cout<<endl;
                 Verificando(mat,0,0,tam,&somaTotal);
                 Imprimindo(mat);
                 cout<<endl;
                 mat.clear();
-                
             }
         } 
     }
+    if (!(decisao))
+    {
+        Verificando(mat,0,0,tam,&somaTotal);
+        Imprimindo(mat);
+    }
+    
     cout<<"Soma total: "<<somaTotal<<endl;
     input_file.close();
 }
@@ -214,5 +222,4 @@ void Verificando(vector<vector<int>>mat, int linha, int coluna,int tam, int *som
     cout<<"soma: "<<soma<<endl;
     *somaTotal= *somaTotal+soma;
     Imprimindo(mat);
-    
 }
