@@ -34,23 +34,23 @@ Sabendo disso, uma leitura por toda matriz e realizada, nesta leitura busca-se o
 Fig 1. Exemplo de funcionamento do Problema.<br>
 
  Todo este processo e feito enquanto a posicao linha coluna nao sao iguais a posicao NxN da matriz passada. <br>
- Em casos particulares, como:<br>
- 1-Linha atual igual ultima linha da matriz.: <br>
+ Em casos particulares, foram realizadas acoes permitidas somente para a posicao que se ocupava, para que o algoritmo nao acessasse posicoes indesejadas. Exemplos:<br><br>
+ 1-Linha atual igual ultima linha da matriz, a imagem abaixo representa a unica opcao possivel de movimento, que e: andar a direita. <br>
  <img width="300px" src="imgs/exemploMatEx1.png" /> <br>
  Fig 2. Exemplo de possibilidades em caso de situacao especifica. <br> <br>
- 2-Coluna atual igual primeira coluna da matriz. <br>
+ 2-Coluna atual igual primeira coluna da matriz, a imagem abaixo representa 3 opcoes possiveis de movimento, que sao: andar a direita, diagonal direita e para baixo <br>
   <img width="300px" src="imgs/exemploMatEx2.png" /> <br>
   Fig 3. Exemplo de possibilidades em caso de situacao especifica. <br> <br>
- 3- Coluna atual igual ultima coluna da matriz. <br>
+ 3- Coluna atual igual ultima coluna da matriz, a imagem abaixo representa 3 opcoes possiveis de movimento, que sao: andar a esquerda, diagonal esquerda e para baixo<br>
   <img width="300px" src="imgs/exemploMatEx3.png" /> <br>
    Fig 4. Exemplo de possibilidades em caso de situacao especifica. <br> <br>
- Foram realizadas acoes permitidas somente para a posicao que se ocupava, para que o algoritmo nao acessasse posicoes indesejadas. <br>
 
   Este processo acontece enquanto a arquivo nao termina sua leitura, ou seja, para cada matriz no arquivo lido, e chamado uma vez a funcao verificando e a funcao imprimindo.
 
  # Resultados 
-   Considerando os pontos realizados acima, os resultados esperados durante a leitura do arquivo com 4 matrizes 7x7:<br><br>
+   Considerando a logica e a descricao do problema acima, os resultados esperados durante a leitura do arquivo com 4 matrizes 7x7:<br><br>
    <img width="300px" src="imgs/teste1.jpeg" /> <br>
+ > OBS: O resultado apresentado e de apenas uma matriz 7x7.
    Todas as matrizes apresentaram o mesmo padrao de resultado, ao finalizar o precosso de leitura ira retornar a soma de todas as somas. <br>
    
  # Bibliotecas 
